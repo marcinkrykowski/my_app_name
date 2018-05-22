@@ -14,9 +14,14 @@
       <td><%= book.author %></td>
       <td><%= link_to 'Show', book_path(book) %></td>
       <td><%= link_to 'Edit', edit_book_path(book) %></td>
-            <td><%= link_to 'Destroy', book_path(book),
+      <td><%= link_to 'Destroy', book_path(book),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <% if book.isRented? %> 
+       <td><%= button_to "Give back!", give_back_book_path(id: book.id) %></td>
+      <% else %>
+       <td><%= button_to "Rent!", rent_book_path(id: book.id) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

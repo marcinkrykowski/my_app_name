@@ -14,6 +14,7 @@ class BooksController < ApplicationController
 
 	def create
     	@book = Book.new(book_params)
+    	@book.isRented = false
     	if @book.save
       		redirect_to @book
     	else
@@ -40,9 +41,20 @@ class BooksController < ApplicationController
  
   	redirect_to books_path
 	end
-
+	
+	def rent
+    @book = Book.find(params[:id])
+    @book.update(isRented: true)
+    redirect_to books_path
+	end
+ 
+	def give_back
+    @book = Book.find(params[:id])
+    @book.update(isRented: false)
+    redirect_to books_path
+	end
 private
   def book_params
-    params.require(:book).permit(:title, :text, :description)
+    params.require(:book).permit(:title, :author, :description, :isRented)
   end
 end
