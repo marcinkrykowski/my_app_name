@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :books do
    post 'rent', on: :member
    post 'give_back', on: :member
- end
+ end 
 end

@@ -19,5 +19,5 @@
   <%= @book.isRented %>
 </p>
 
-<%= link_to 'Back', books_path %>
-<%= link_to 'Edit', edit_book_path(@book) %>
+<%= link_to '<button type="Back" class="btn btn-default">Back</button>'.html_safe, books_path %>
+<%= link_to '<button type="Edit" class="btn btn-default">Edit</button>'.html_safe, edit_book_path(@book) %>

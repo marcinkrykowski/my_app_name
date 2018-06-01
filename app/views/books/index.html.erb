@@ -1,15 +1,20 @@
 <h1>All books</h1>
-
-<%= link_to 'New book', new_book_path %>
-<table>
+<%= link_to '<button type="New book" class="btn btn-default">New book</button>'.html_safe, new_book_path %>
+<table class="table">
   <tr>
+    <th>Id</th>
     <th>Title</th>
     <th>Author</th>
+    <th>Show details about book</th>
+    <th>Update information about book</th>
+    <th>Delete book from library</th>
+    <th>What you want to do?</th>
     <th colspan="2"></th>
   </tr>
  
   <% @books.each do |book| %>
     <tr>
+      <td><%= book.id %></td>
       <td><%= book.title %></td>
       <td><%= book.author %></td>
       <td><%= link_to 'Show', book_path(book) %></td>
@@ -17,6 +22,7 @@
       <td><%= link_to 'Destroy', book_path(book),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+
       <% if book.isRented? %> 
        <td><%= button_to "Give back!", give_back_book_path(id: book.id) %></td>
       <% else %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookId: 1
+  userId: 1
+  rentDate: 2018-05-22 22:09:42
+  returnDate: 2018-05-22 22:09:42
+
+two:
+  bookId: 1
+  userId: 1
+  rentDate: 2018-05-22 22:09:42
+  returnDate: 2018-05-22 22:09:42

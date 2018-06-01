@@ -1,0 +1,2 @@
+class Hstory < ApplicationRecord
+end

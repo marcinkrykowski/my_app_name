@@ -45,13 +45,19 @@ class BooksController < ApplicationController
 	def rent
     @book = Book.find(params[:id])
     @book.update(isRented: true)
+    
     redirect_to books_path
 	end
  
 	def give_back
     @book = Book.find(params[:id])
     @book.update(isRented: false)
+    
     redirect_to books_path
+	end
+	
+	def add_rent_to_history(bookId)
+	  @history = History.new(bookId, Time.now)
 	end
 private
   def book_params
