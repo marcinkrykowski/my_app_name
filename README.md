@@ -1,1 +1,1 @@
-Library application hosted [here](whispering-basin-44268.herokuapp.com)
+Library application hosted [whispering-basin-44268.herokuapp.com]
