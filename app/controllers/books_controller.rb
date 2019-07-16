@@ -55,11 +55,9 @@ class BooksController < ApplicationController
     
     redirect_to books_path
 	end
-	
-	def add_rent_to_history(bookId)
-	  @history = History.new(bookId, Time.now)
-	end
+
 private
+
   def book_params
     params.require(:book).permit(:title, :author, :description, :isRented)
   end
